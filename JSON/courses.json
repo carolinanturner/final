@@ -1,0 +1,54 @@
+[
+    {
+        "title": "Advanced Programming Techniques",
+        "code": "CSCE 240",
+        "year": "2023",
+        "semester": "Fall",
+        "professor": "Brian Hipp",
+        "description": [
+            "Pointers; memory management; advanced programming language structures: operator overloading, iterators, multiple inheritance, polymorphism, templates, virtual functions; Unix programming environment."
+        ]
+    },
+    {
+        "title": "Business Writing",
+        "code": "ENGL 463",
+        "year": "2023",
+        "semester": "Fall",
+        "professor": "Kelly Pierce",
+        "description": [
+            "Extensive practice in different types of business writing, from brief letters to formal articles and reports."
+        ]
+    },
+    {
+        "title": "Discrete Mathematics for Computer Science",
+        "code": "MATH 174",
+        "year": "2023",
+        "semester": "Fall",
+        "professor": "Mohammad Mahmud Hasan",
+        "description": [
+            "Logic, number theory, sequences, series, recursion, mathematical induction, set theory, enumeration, functions, relations, graphs and trees. Connections to computers and to programming are emphasized when possible."
+        ]
+    },
+    {
+        "title": "Web Applications",
+        "code": "CSCE 242",
+        "year": "2023",
+        "semester": "Fall",
+        "professor": "Portia Plante",
+        "description": [
+            "Web technologies to support client-server computing. Implementation of client-server applications."
+        ]
+        
+    },
+    {
+        "title": "Computer Hardware Foundations",
+        "code": "CSCE 210",
+        "year": "2023",
+        "semester": "Fall",
+        "professor": "Matt Thatcher",
+        "description": [
+            "Number representation, data formats, CPU and memory organization, assembly language, I/O and peripherals, computer networks. Students may not apply both CSCE 210 and CSCE 212 to any minor or major program of study."
+        ]
+        
+    }
+]

@@ -1,0 +1,129 @@
+<!--Carolina Turner-->
+<!DOCTYPE html">
+<html lang="en">
+
+<head>
+<title>Project Part 5</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+    <header id="main-header">
+        <div id="header">
+            <h1>Carolina Turner</h1>
+        <h2>CSCE 242: Web Applications</h2>
+        </div>
+        <h3>Course Description: Web Technologies to support client-server computing. Implementation of client-server applications.</h3>
+        <nav id="main-nav">
+        <div id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+            <ul id="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+                <li><a href="courses.html">Courses</a></li>
+            </ul>
+        </nav>
+        <div id="heres-about">
+            <h2>A little bit about this website and its designer:</h2>
+        </div>
+<div id="flex-container-about">
+    <section class="col1of2 column">
+        <section id="description">
+            <p>Hello ! My Name is Carolina Turner and I am currently a junior at the University of South Carolina College of Engineering and
+                 Computing! I'm a Computer Information Systems major and am minoring in Business Administration. This website is an application of my
+                 knowledge from a course, CSCE 242: Web Applications. In this course, I completed assignments every week to build websites with HTML,
+                 CSS and JavaScript.
+            </p>
+            <p>
+            <section id="description-p2">
+                This is my current study playlist while coding websites:
+            </section>
+            </p>
+        </section>
+        <section id="imgs">
+            <section class="img">
+            <div id="about-img"><a href="images/compscibanner.jpg"><img src="images/compscibanner.jpg"></a></div>
+            </section>
+            <section class="img">
+            <div id="about-img"><a href="images/ftt.jpg"><img src="images/ftt.jpg"></a></div>
+            </section>
+            <section class="img">
+            <div id="about-img"><a href="images/uofsc.jpg"><img src="images/uofsc.jpg"></a></div>
+            </section>
+            </section>
+    </section>
+       
+</div>
+<div id="flex-container-about">
+    <section class="col1of2 column">
+        <section id="playlist">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6N05aHELD8g8v4k3uja6ag?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </section>
+
+    </section>
+</div>
+        <section id="project-ideas">
+            <h2>
+                Let me know your website/project ideas below!
+            </h2>
+        </section>
+        <form id="project-form">
+            <li>
+                <ul>
+                <label for="Name">Name:</label>
+                <input type="text" name="Name" required>
+                </ul>
+                <ul>
+                    <label for="Email">Email:</label>
+                    <input type="email" name="Email" required>
+                </ul>
+                <ul>
+                    <label for="Project-Name">Project Name/Subject:</label>
+                    <input type="text" name="Project-Name" required>
+                    </ul>
+                    <ul>
+                        <label for="description">Description:</label>
+                        <textarea name="description" required></textarea>
+                    </ul>
+                <h4>
+                    Color/Pictures or Black & White/No Pictures?
+                </h4>
+                <ul>
+                    <input type="radio" name="color/bw" value="color" required/>
+                    <label for="color" class="inline">Colors</label>
+                </ul>
+                <ul>
+                    <input type="radio" name="color/bw" value="bw" required/>
+                    <label for="bw" class="inline" >Black & White</label>
+                </ul>
+
+                <h4>Type of Project:</h4>
+
+                <ul>
+                    <input type="radio" name="project-type" value="webpage" required/>
+                    <label for="webpage" class="inline">Webpage  (1 Page)</label>
+                </ul>
+                <ul>
+                    <input type="radio" name="project-type" value="website" required/>
+                    <label for="website" class="inline">Website  (2+ Pages)</label>
+                </ul>
+                <p>
+                    <input type="checkbox" name="verify" required/><label
+                      for="verify"
+                      class="inline"
+                      >I am not a robot!</label
+                    >
+                </p>
+                <button type="submit">Submit Form</button>
+                <p id="success" class="hidden">Message succesfully submitted.</p>
+            </li>
+        </form>
+        <script src="form.js"></script>
+</body>
+</html>
