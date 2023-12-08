@@ -16,115 +16,100 @@ mongoose
 .then(()=>{console.log("connected yay!!!")})
 .catch((error)=>console.log("couldnt connect !!"))
 
-const beverageSchema = new mongoose.Schema({
-        title : String, 
-        hot_or_iced:String,
-        fan_favorite : String,
-        price:Number,
-        recommendation: String,
-        flavors: [String],
-        img: String,
+const contactSchema = new mongoose.Schema({
+        name : String, 
+        email: String,
+        idea: String,
+        img: String
 });
 
-const Beverage = mongoose.model ("Beverage", beverageSchema);
+const contact_form = mongoose.model ("contact_form", contactSchema);
 
 app.get("/" , (req,res)=>{
     res.sendFile(__dirname+ "/index.html");
 });
 
-app.get("/api/beverages", (req, res) =>{  
-    getBeverages(res);
+app.get("/api/project_ideas", (req, res) =>{  
+    getContactForm(res);
   });
 
-const getBeverages = async (res)=>{
-    const beverages = await Beverage.find();
-    res.send(beverages);
-};
-
-app.get("/api/beverages/:id", (req, res) => {
-    getBeverage(res, req.params.id);
+app.get("/api/project_ideas/:id", (req, res) => {
+    getContactForm(res, req.params.id);
   });
   
-const getBeverage = async (res, id) => {
-    const beverage = await Beverage.findOne({ _id: id });
-    res.send(beverage);
+const getContactForm = async (res, id) => {
+    const contact_form = await contact_form.findOne({ _id: id });
+    res.send(contact_form);
   };
   
-app.post("/api/beverages", upload.single("img"), (req,res)=>{
-  console.log("office hours!!");
-    const result = validateBeverage(req.body);
+app.post("/api/project_ideas", upload.single("img"), (req,res)=>{
+    const result = validateContactForm(req.body);
     if(result.error){
         res.status(400).send(result.error.details[0].message);
         return;
     }
 
-    const beverage = new Beverage({
-        title : req.body.beverageTitle,
-        hot_or_iced : req.body.hot_or_iced,
-        price : req.body.price,
-        fan_favorite:req.body.fan_favorite,
-        recommendation : req.body.recommendation,
-        flavors : req.body.flavors.split(","),
+    const contact_form = new contact_form({
+      name : req.body.String, 
+      email: req.body.String,
+      idea: req.body.String,
+      img: req.body.String
     });
      if (req.file){
-        beverage.img="images/" + req.file.filename;
+        contact_form.img="images/" + req.file.filename;
     }
-    createBeverage(beverage, res);
+    createContactForm(contact_form, res);
 });
 
-const createBeverage = async (beverage, res) => {
-    const result = await beverage.save();
-    res.send(beverage);
+const createContactForm = async (contact_form, res) => {
+    const result = await contact_form.save();
+    res.send(contact_form);
   };
 
 
-app.put("/api/beverages/:id",upload.single("img"), (req,res)=>{
-    const result = validateBeverage(req.body);
+app.put("/api/project_ideas/:id",upload.single("img"), (req,res)=>{
+    const result = validateContactForm(req.body);
     console.log(result);
     if (result.error){
     res.status(400).send(result.error.details[0].message);
     return;
   }
-  updateBeverage(req, res);
+  updateContactForm(req, res);
 });
     
-const updateBeverage = async (req, res) => {
+const updateContactForm = async (req, res) => {
     let fieldsToUpdate = {
-        title : req.body.beverageTitle,
-        hot_or_iced : req.body.hot_or_iced,
-        price : req.body.price,
-        recommendation : req.body.recommendation,
-        fan_favorite : req.body.fan_favorite,
-        flavors : req.body.flavors.split(","),
+      name : req.body.String, 
+      email: req.body.String,
+      idea: req.body.String,
+      img: req.body.String
     };
     if (req.file) {
       fieldsToUpdate.img = "images/" + req.file.filename;
     }
-    const result = await Beverage.updateOne({ _id: req.params.id }, fieldsToUpdate);
+    const result = await contact_form.updateOne({ _id: req.params.id }, fieldsToUpdate);
     res.send(result);
   };
 
-  app.delete("/api/beverages/:id", (req, res) => {
-    removeBeverages(res, req.params.id);
+  app.delete("/api/project_ideas/:id", (req, res) => {
+    removeContactForm(res, req.params.id);
   });
   
-  const removeBeverages = async (res, id) => {
-    const beverage = await Beverage.findByIdAndDelete(id);
-    res.send(beverage);
+  const removeContactForm = async (res, id) => {
+    const contact_form = await contact_form.findByIdAndDelete(id);
+    res.send(contact_form);
   };
 
-function validateBeverage (beverage) {
+function validateContactForm (beverage) {
     const schema = Joi.object({ //Joi Validation
-        beverageTitle : Joi.string().min(3).required(), //joi validating it must be string of length three and is required, "tea" is minimum length
-        hot_or_iced : Joi.string().min(3), //not required if can be either or
-        price : Joi.allow().required(),
-        fan_favorite: Joi.allow(),
-        recommendation : Joi.allow("").required(),
-        flavors :Joi.allow(""),
-        _id: Joi.allow("")
+        name : Joi.string().required(), //joi validating it must be string of length three and is required, "tea" is minimum length
+        email: Joi.string().required(),
+        idea: Joi.string().required(),
+        _id: Joi.allow(""),
+        img: Joi.allow("")
     });
 
-    return schema.validate(beverage);
+    return schema.validate(contact_form);
   }
 
   app.listen(3000, ()=>{

@@ -3,7 +3,7 @@
 
 <html lang= "en">
     <head>
-        <title>Project Part 5</title>
+        <title>Final</title>
         <link rel="stylesheet" href="styles.css">
 
     </head>
@@ -34,7 +34,7 @@
                     <h2>Let's chat! Here is how you can reach me:</h2>
                 </section>
                 <div class="flex-container-contact">
-                    <section id="contact-forms">
+                    <section id="contact-title">
                     <h3>Institution Email:</h3>
                     <h3>Personal Email:</h3>
                     <h3>Phone Number:</h3>
@@ -47,11 +47,8 @@
                     <div id="GroupMe"><a href="images/qr.jpg"><img src="images/qr.jpg"></a></div>
                     </section>
                     <section id="message">
-                    <h2>or leave me a message!</h2>
-                    <div id="msg-box"><input type="text"></div>
-                    <button id="submit">Submit</button>
                     <h2>LinkedIn:</h2>
-                    <div id="msg-box">
+                    <div id="linkedIn">
                         <a href="https://www.linkedin.com/in/carolina-n-turner"><img src="images/linkedin.png"></a>
                     </div>
                     </section>
@@ -61,14 +58,8 @@
                         <h3>Fill out this form and we will contact you as soon as possible.</h3>
                     </section>
 
-                    <form id="contact-me"
-                        action="https://api.web3forms.com/submit" 
-                        method="POST"
-                        >
-                        <input type="hidden" 
-                        name="access_key" 
-                        value="5baed417-5808-4931-a823-ed38b8dac59a">
-                    
+                    <form id="contact_form">
+                        <input type="hidden" name="_id" value="-1" />
                     <li>
                             <ul>
                             <label for="name">First & Last Name:</label>
@@ -88,7 +79,6 @@
                               for="verify"
                               class="inline" >I am not a robot!</label>
                         </section>
-                            <input type="hidden" name="redirect" value="https://web3forms.com/success">
                             <button type="submit">Submit Form</button>
                         <p id="result" class="hidden"></p>
                     </li>

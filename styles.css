@@ -190,7 +190,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
     font-weight: 200;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-#contact-forms h3{
+#contact-title h3{
     font-weight: 200;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -201,16 +201,16 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
     font-weight: 200;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-#contact-forms{
+#contact_form{
     padding-left :25px;
 }
-#contact-forms h3{
+#contact_form h3{
     font-weight: 500;
     text-decoration: underline;
     text-align: left;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-#contact-info, #contact-forms{
+#contact-info, #contact-title{
     display: inline-block;
 }
 #GroupMe{
@@ -244,7 +244,7 @@ input[type="text"] {
 .hidden{
     visibility: hidden;
 }
-#contact-me{
+#contact_form{
    width: 40%;;
    margin-left: 440px;
    list-style-type: none;
@@ -252,10 +252,10 @@ input[type="text"] {
    border-radius: 10px;
    padding: 5px;
 }
-#contact-me label{
+#contact_form label{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-#contact-me button, #checkbox{
+#contact_form button, #checkbox{
     margin-left: 25px;
     margin-top: 25px;;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -318,6 +318,81 @@ input[type="text"] {
     padding: 10px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+/*Final*/
+.hidden {
+    display: none;
+}
+
+.transparent {
+    opacity: 0;
+}
+#course-suggestion h2{
+    text-align: center;
+    font-weight: 200;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#add-edit-course-form{
+    width:650px;
+    height:700px;
+    background-color: aquamarine;
+    border-radius: 5px;
+    margin:auto;
+    padding:5px;
+}
+#add-edit-course-form li{
+    list-style-type: none;
+    margin: auto;
+    margin-left: 100px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#add-edit-course-form button{
+    margin-left: 150px;
+}
+#course-details{
+    width:550px;
+    height:400px;
+    background-color: aquamarine;
+    border-radius: 5px;
+}#course-details h2, p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight : 200;
+    text-align: center;
+}
+#course-details, #add-edit-course-form{
+    display : inline-block;
+}
+#add-link {
+    font-size: 3em;
+    border: 2px solid rgb(83, 176, 230);
+}
+
+#edit-link {
+    float: right;
+    margin-right: 10px;
+}
+
+#delete-link {
+    float: right;
+    margin-right: 5px;
+    font-size: 3em;
+    border: 2px solid rgb(83, 176, 230);
+}
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0px 5px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* Larger Resolutions */
 @media only screen and (min-width: 900px){ 
     #main-nav ul{
@@ -341,8 +416,11 @@ input[type="text"] {
     .flex-container-assignment1{
         display: flex;
     }
-    #contact-forms, #contact-info, #message{
+    #contact-info, #contact-title, #message{
         flex:1;
+    }
+    #add-edit-course-form, #course-details{
+       flex : 1;
     }
    .img, .descrip{
         display: flex;
