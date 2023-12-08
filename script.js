@@ -2,8 +2,7 @@
 const getCourses = async ()=>{
   try {
     return (
-      await fetch("https://carolinanturner.github.io/projects/part%205/json/courses.json")
-    ).json();
+      await fetch("https://final-nrgm.onrender.com/api/courses")).json();
   } catch (error) {
     console.log(error);
   }
@@ -43,8 +42,6 @@ const getLi = data=>{
   li.textContent= data;
   return li;
 }
-///////////////////////////
-
 const displayDetails = (course) => {
   const courseDetails = document.getElementById("course-details");
   courseDetails.innerHTML = "";
@@ -168,7 +165,7 @@ const addEditCourse = async (e) => {
   resetForm();
   showCourses();
 };
-////////////////////////////////////
+
 const showHideAdd = (e) => {
   e.preventDefault();
   document.querySelector(".dialog").classList.remove("transparent");
@@ -177,7 +174,6 @@ const showHideAdd = (e) => {
 };
 window.onload= ()=>{
   showCourses();
- // document.getElementById("add-course").onclick = addEditCourse;
   document.getElementById("add-edit-course-form").onsubmit = addEditCourse;
   document.getElementById("add-link").onclick = showHideAdd;
 
